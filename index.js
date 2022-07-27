@@ -2,9 +2,10 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const connectToDatabase = require('./src/Database/database');
-const userRoutes = require('./src/User/routes/user.routes');
+const user = require('./src/User/routes/user.routes');
 const auth = require('./src/Auth/routes/auth.routes');
-const swagger = require('./src/Swagger/swagger.routes')
+const menu = require('./src/Menu/routes/menu.Route');
+const swagger = require('./src/Swagger/swagger.routes');
 
 const port = process.env.PORT || 3002;
 
@@ -15,8 +16,9 @@ app.use(express.json());
 
 connectToDatabase();
 
-app.use('/User', userRoutes);
 app.use('/Auth', auth);
+app.use('/User', user);
+app.use('/Menu', menu);
 app.use('/swagger', swagger);
 
 app.listen(port, () =>
