@@ -13,7 +13,7 @@ app.use(express.json());
 
 connectToDatabase();
 
-app.use('/', userRoutes);
+app.use('/User', userRoutes);
 
 app.listen(port, () =>
 	console.log(`Server listening on http://localhost:${port}`),
