@@ -1,0 +1,158 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "restaurant menu",
+    "description": "API for registering products and orders",
+    "termsOfService": "",
+    "contact": {
+      "dev1": {
+        "name": "Caio Rodrigo",
+        "email": "caio4866@gmail.com"
+      },
+      "dev2": {
+        "name": "",
+        "email": ""
+      }
+    },
+    "version": "1.0.0"
+  },
+  "service": [
+    {
+      "url": "mongodb://localhost:27017/restaurant",
+      "description": "API for restaurant"
+    }
+  ],
+  "paths": {
+    "/Auth/": {
+      "post": {
+        "summary": "Account access",
+        "description": "Route responsible for the access of a registered user",
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/User"
+              },
+              "example": {
+                "email": "CR@gmail.com",
+                "password": "123456"
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "User not found!"
+          },
+          "406": {
+            "description": "invalid password"
+          },
+          "200": {
+            "description": "OK!"
+          }
+        }
+      }
+    },
+    "/User/Create": {
+      "post": {
+        "summary": "Create a new User",
+        "description": "Route responsible to create a new User",
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "Object",
+                "$ref": "#/components/schemas/User"
+              },
+              "example": {
+                "user": "CaioR",
+                "userName": "Caio Rodrigo",
+                "email": "CR@gmail.com",
+                "password": "123456",
+                "avatar": "https://avatars.githubusercontent.com/u/78828999?v=4"
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Some fields are missing or user already exists"
+          },
+          "500": {
+            "description": "Error creating User"
+          },
+          "201": {
+            "description": "User created successfully"
+          }
+        }
+      }
+    },
+    "/User/AllUsers": {
+      "get": {
+        "summary": "List all users",
+        "description": "Lists all users for possible maintenance",
+        "tags": [
+          "User"
+        ],
+        "security": [
+          {
+            "bearerLogin": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerLogin": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "schemas": {
+      "User": {
+        "type": "Object",
+        "properties": {
+          "user": {
+            "type": "string"
+          },
+          "userName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -16,10 +16,6 @@ const createUser = async (req, res) => {
 	const User = req.body;
 	const { user, email } = req.body;
 
-	const newUser = await Service.createUserService(User).catch((err) => {
-		console.log(err.message);
-	});
-
 	const foundUser = await Service.findByUserService(user);
 	if (foundUser) {
 		return res.status(400).send({ message: 'User already registered!' });
@@ -29,6 +25,10 @@ const createUser = async (req, res) => {
 	if (foundEmail) {
 		return res.status(400).send({ message: 'Email already registered!' });
 	}
+
+	const newUser = await Service.createUserService(User).catch((err) => {
+		console.log(err.message);
+	});
 
 	if (!newUser) {
 		return res.status(500).send({ error: 'Error creating User' });
