@@ -1,4 +1,3 @@
-
 const Cardapio = require ('../models/Cardapio')
 
 const findAllCardapio = async (req, res) => {
@@ -10,10 +9,9 @@ const findByIdCardapio = async (id) => {
     return await Cardapio.findById (id);
 };
 
-const createItem = async (id, editItem) => await Cardapio.fin (id, editItem).setOptions({
-    returnOriginal:
-    false
-});
+const createItem = async (newItem) => {
+    await Cardapio.create (newItem);
+};
 
 const updateItem = async (id, editItem) => await Cardapio.find (id, editItem).setOptions({
     returnOriginal: false
