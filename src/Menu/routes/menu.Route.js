@@ -1,17 +1,12 @@
-const express = require('express');
-
 const controller = require('../controllers/controller');
-
+const { validId, validObjectBody } = require('../middlewares/menu.middlewares');
+const Token = require('../../Auth/middlewares/auth.middlewares');
 const route = require('express').Router();
 
 route.get('/allItens', controller.findAllMenuController);
-
-route.get('/itens/:id', controller.findByIdCardapioController);
-
-route.post('/createItem', controller.createItem);
-
-route.put('/updateItem/:id', controller.updateItem);
-
-route.delete('/deleteItem/:id', controller.deleteItem);
+route.get('/itens/:id', validId, controller.findByIdCardapioController);
+route.post('/createItem', Token, validObjectBody, controller.createItem);
+route.put('/updateItem/:id', Token, validId, controller.updateItem);
+route.delete('/deleteItem/:id', Token, validId, controller.deleteItem);
 
 module.exports = route;
