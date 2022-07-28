@@ -30,7 +30,7 @@ const findByIdCardapioController = async (req, res) => {
 const createItem = async (req, res) => {
   const item = req.body;
 
-  if (!item.nome || item.valor || item.url) {
+  if (!item.nome || item.descricao || item.url) {
     return res.status(400).send({
       message:
         "Você não preencheu todos os campos para fazer a ediçãodesse item",
