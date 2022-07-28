@@ -1,4 +1,4 @@
-const { updateItem } = require('../controllers/controller');
+
 const Cardapio = require ('../models/Cardapio')
 
 const findAllCardapio = async (req, res) => {
