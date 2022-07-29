@@ -30,8 +30,8 @@ const createItem = async (req, res) => {
 	const newItem = await MenuService.createItem(item).catch((err) => {
 		console.log(err.message);
 	});
-	console.log(newItem);
-	res.status(201).send(newItem);
+
+	res.status(201).send(item);
 };
 
 const updateItem = async (req, res) => {
@@ -46,12 +46,12 @@ const updateItem = async (req, res) => {
 };
 
 const deleteItem = async (req, res) => {
-	const id = parseInt(req.params.id);
+	const id = req.params.id;
 	const item = await MenuService.findByIdCardapio(id);
 	itemExists(item, res);
 
 	await MenuService.deleteItem(id);
-	res.send({message:'Item deleted sucessfully!'})
+	res.send({ message: 'Item deleted sucessfully!' });
 };
 
 module.exports = {

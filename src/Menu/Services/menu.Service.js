@@ -18,7 +18,7 @@ const updateItem = async (id, editItem) =>
 		returnOriginal: false,
 	});
 
-const deleteItem = async (id) => await Cardapio.findBYIdAndDelete(id);
+const deleteItem = async (id) => await Cardapio.findByIdAndDelete(id);
 
 module.exports = {
 	findAllCardapio,
