@@ -22,6 +22,12 @@ module.exports = (req, res, next) => {
 	}
 
 	jwt.verify(token, process.env.SECRET, async (err, decoded) => {
+		if (err) {
+			return res.status(500).send({
+				message: err.message,
+			});
+		}
+
 		const user = await findByIdUserService(decoded.id);
 
 		if (err || !user || !user.id) {

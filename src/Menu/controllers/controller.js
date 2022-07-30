@@ -15,14 +15,11 @@ const findAllMenuController = async (req, res) => {
 };
 
 const findByIdCardapioController = async (req, res) => {
-	const id = parseInt(req.params, id);
-
-	const item = await MenuService.findByIdCardapio(id);
-
-	if (!item) {
-		return res.status(206);
-	}
-	res.send();
+	const id = req.params.id;
+	const item = await MenuService.findById(id);
+	itemExists(item, res);
+	console.log(id);
+	res.send(item);
 };
 const createItem = async (req, res) => {
 	const item = req.body;
@@ -37,7 +34,7 @@ const createItem = async (req, res) => {
 const updateItem = async (req, res) => {
 	const id = req.params.id;
 	const updatedItem = req.body;
-	const item = await MenuService.findByIdCardapio(id);
+	const item = await MenuService.findById(id);
 	itemExists(item, res);
 
 	const upItem = await MenuService.updateItem(id, updatedItem);
@@ -47,7 +44,7 @@ const updateItem = async (req, res) => {
 
 const deleteItem = async (req, res) => {
 	const id = req.params.id;
-	const item = await MenuService.findByIdCardapio(id);
+	const item = await MenuService.findById(id);
 	itemExists(item, res);
 
 	await MenuService.deleteItem(id);

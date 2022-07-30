@@ -5,13 +5,9 @@ const findAllCardapio = async (req, res) => {
 	return Itens;
 };
 
-const findByIdCardapio = async (id) => {
-	return await Cardapio.findById(id);
-};
+const findById = async (id) => await Cardapio.findById(id);
 
-const createItem = async (newItem) => {
-	await Cardapio.create(newItem);
-};
+const createItem = async (newItem) => await Cardapio.create(newItem);
 
 const updateItem = async (id, editItem) =>
 	await Cardapio.findByIdAndUpdate(id, editItem).setOptions({
@@ -22,7 +18,7 @@ const deleteItem = async (id) => await Cardapio.findByIdAndDelete(id);
 
 module.exports = {
 	findAllCardapio,
-	findByIdCardapio,
+	findById,
 	createItem,
 	deleteItem,
 	updateItem,
