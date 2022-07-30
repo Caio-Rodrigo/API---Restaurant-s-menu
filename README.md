@@ -1,6 +1,9 @@
 # API---Restaurant-s-menu
 
-## Esta API foi desenvolvida por [Caio Rodrigo](https://github.com/Caio-Rodrigo), [Lucas Soares dos Santos](https://github.com/LucasSSDK)
+## [Deploy](https://api-restaurant-menu.herokuapp.com/api/)
+
+## Esta API foi desenvolvida por [Caio Rodrigo](https://github.com/Caio-Rodrigo) & [Lucas Soares dos Santos](https://github.com/LucasSSDK)
+
 
 ### API criada para o projeto 1 do curso de FullStac da escola Blue EdTech
 
