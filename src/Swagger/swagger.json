@@ -122,6 +122,185 @@
           }
         }
       }
+    },
+    "/Menu/allItens": {
+      "get": {
+        "summary": "List all itens",
+        "description": "Lists all itens of menu ",
+        "tags": [
+          "Menu"
+        ],
+        "responses": {
+          "400": {
+            "description": "Not found"
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Menu"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Menu/itens/{id}": {
+      "get": {
+        "summary": "Get iten by ID",
+        "description": "Returns itens by ID",
+        "tags": [
+          "Menu"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Iten ID to search",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schemas": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Menu"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Menu/createItem": {
+      "post": {
+        "summary": "Create a new iten",
+        "description": "Route responsible to create a new Iten",
+        "tags": [
+          "Menu"
+        ],
+        "security": [
+          {
+            "bearerLogin": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/User"
+              },
+              "example": {
+                "name": "Panna cotta",
+                "description": "talian panna cotta literally means cooked (cotta) cream (panna). It is one of the simplest desserts in the world: a pudding consisting of good quality cream with possibly some milk, a minimal amount of gelatine and some sugar. A touch of vanilla may be added to give the pudding a subtle taste.",
+                "url": "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/panna_cotta_2-1080x1080.jpg"
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Fill in all fields!"
+          },
+          "200": {
+            "description": "OK!"
+          }
+        }
+      }
+    },
+    "/Menu/updateItem/{id}": {
+      "put": {
+        "summary": "Update a iten",
+        "description": "route responsible for editing a iten through an ID",
+        "tags": [
+          "Menu"
+        ],
+        "security": [
+          {
+            "bearerLogin": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the iten to update",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Menu"
+              },
+              "example": {
+                "name": "Carpaccio",
+                "description": "The Italian appetiser, carpaccio traditionally consists of wafer-thin slices of raw beef, served with capers and a dressing of mayonnaise, lemon juice, Worcestershire sauce and milk. Outside Italy, thin-sliced beef is served with arugula and Parmesan cheese.",
+                "url": "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/carpaccio_2-1080x960.jpg"
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Invalid ID"
+          },
+          "200": {
+            "description": "Iten updated successfully!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Menu"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Menu/deleteItem/{id}": {
+      "delete": {
+        "summary": "Delete a iten by ID",
+        "description": "Delete a iten by its ID",
+        "tags": [
+          "Menu"
+        ],
+        "security": [
+          {
+            "bearerLogin": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Iten ID for deletion",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -149,6 +328,20 @@
             "type": "string"
           },
           "avatar": {
+            "type": "string"
+          }
+        }
+      },
+      "Menu": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "url": {
             "type": "string"
           }
         }
