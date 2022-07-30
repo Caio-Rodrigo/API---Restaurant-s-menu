@@ -19,7 +19,7 @@ connectToDatabase();
 app.use('/Auth', auth);
 app.use('/User', user);
 app.use('/Menu', menu);
-app.use('/swagger', swagger);
+app.use('/api', swagger);
 
 app.listen(port, () =>
 	console.log(`Server listening on http://localhost:${port}`),
