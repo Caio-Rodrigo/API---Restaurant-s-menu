@@ -6,17 +6,12 @@
     "termsOfService": "",
     "version": "1.0.0"
   },
-    "servers": [
-      {
-        "url": "https://api-restaurant-menu.herokuapp.com/",
-        "description": "URL for Deploy"
-      },
-      {
-        "url": "mongodb://localhost:27017/restaurant",
-        "description": "URL for test"
-      }
-    ],
-  
+  "servers": [
+    {
+      "url": "mongodb://localhost:27017/restaurant",
+      "description": "API for restaurant"
+    }
+  ],
   "paths": {
     "/Auth/": {
       "post": {
