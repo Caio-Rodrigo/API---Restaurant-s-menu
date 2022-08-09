@@ -8,8 +8,12 @@
   },
   "servers": [
     {
+      "url": "",
+      "description": "URL for Deploy"
+    },
+    {
       "url": "http://localhost:3002",
-      "description": "API for restaurant"
+      "description": "URL for test"
     }
   ],
   "paths": {
@@ -27,9 +31,19 @@
                 "type": "object",
                 "$ref": "#/components/schemas/User"
               },
-              "example": {
-                "email": "CR@gmail.com",
-                "password": "123456"
+              "examples": {
+                "Email": {
+                  "value": {
+                    "email": "CR@gmail.com",
+                    "password": "123456"
+                  }
+                },
+                "User": {
+                  "value": {
+                    "user": "CaioR",
+                    "password": "123456"
+                  }
+                }
               }
             }
           }
@@ -61,12 +75,16 @@
                 "type": "Object",
                 "$ref": "#/components/schemas/User"
               },
-              "example": {
-                "user": "CaioR",
-                "userName": "Caio Rodrigo",
-                "email": "CR@gmail.com",
-                "password": "123456",
-                "avatar": "https://avatars.githubusercontent.com/u/78828999?v=4"
+              "examples": {
+                "User": {
+                  "value": {
+                    "user": "CaioR",
+                    "userName": "Caio Rodrigo",
+                    "email": "CR@gmail.com",
+                    "password": "123456",
+                    "avatar": "https://avatars.githubusercontent.com/u/78828999?v=4"
+                  }
+                }
               }
             }
           }
@@ -192,10 +210,14 @@
                 "type": "object",
                 "$ref": "#/components/schemas/User"
               },
-              "example": {
-                "name": "Panna cotta",
-                "description": "talian panna cotta literally means cooked (cotta) cream (panna). It is one of the simplest desserts in the world: a pudding consisting of good quality cream with possibly some milk, a minimal amount of gelatine and some sugar. A touch of vanilla may be added to give the pudding a subtle taste.",
-                "url": "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/panna_cotta_2-1080x1080.jpg"
+              "examples": {
+                "Item": {
+                  "value": {
+                    "name": "Panna cotta",
+                    "description": "talian panna cotta literally means cooked (cotta) cream (panna). It is one of the simplest desserts in the world: a pudding consisting of good quality cream with possibly some milk, a minimal amount of gelatine and some sugar. A touch of vanilla may be added to give the pudding a subtle taste.",
+                    "url": "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/panna_cotta_2-1080x1080.jpg"
+                  }
+                }
               }
             }
           }
@@ -236,10 +258,14 @@
               "schema": {
                 "$ref": "#/components/schemas/Menu"
               },
-              "example": {
-                "name": "Carpaccio",
-                "description": "The Italian appetiser, carpaccio traditionally consists of wafer-thin slices of raw beef, served with capers and a dressing of mayonnaise, lemon juice, Worcestershire sauce and milk. Outside Italy, thin-sliced beef is served with arugula and Parmesan cheese.",
-                "url": "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/carpaccio_2-1080x960.jpg"
+              "examples": {
+                "Item": {
+                  "value": {
+                    "name": "Carpaccio",
+                    "description": "The Italian appetiser, carpaccio traditionally consists of wafer-thin slices of raw beef, served with capers and a dressing of mayonnaise, lemon juice, Worcestershire sauce and milk. Outside Italy, thin-sliced beef is served with arugula and Parmesan cheese.",
+                    "url": "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/carpaccio_2-1080x960.jpg"
+                  }
+                }
               }
             }
           }
