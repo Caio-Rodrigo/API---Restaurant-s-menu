@@ -8,7 +8,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://api-restaurant-menu.herokuapp.com/",
       "description": "URL for Deploy"
     },
     {
