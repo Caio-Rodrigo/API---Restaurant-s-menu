@@ -4,24 +4,18 @@
     "title": "restaurant menu",
     "description": "API for registering products and orders",
     "termsOfService": "",
-    "contact": {
-      "dev1": {
-        "name": "Caio Rodrigo",
-        "email": "caio4866@gmail.com"
+    "services": [
+      {
+        "url": "https://api-restaurant-menu.herokuapp.com/",
+        "description": "URL for Deploy"
       },
-      "dev2": {
-        "name": "",
-        "email": ""
+      {
+        "url": "mongodb://localhost:27017/restaurant",
+        "description": "URL for test"
       }
-    },
+    ],
     "version": "1.0.0"
   },
-  "service": [
-    {
-      "url": "mongodb://localhost:27017/restaurant",
-      "description": "API for restaurant"
-    }
-  ],
   "paths": {
     "/Auth/": {
       "post": {
