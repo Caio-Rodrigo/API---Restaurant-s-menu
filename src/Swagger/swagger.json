@@ -8,7 +8,7 @@
   },
   "servers": [
     {
-      "url": "mongodb://localhost:27017/restaurant",
+      "url": "http://localhost:3001",
       "description": "API for restaurant"
     }
   ],
