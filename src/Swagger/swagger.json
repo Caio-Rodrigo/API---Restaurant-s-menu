@@ -32,8 +32,14 @@
                 "$ref": "#/components/schemas/User"
               },
               "examples": {
-                "email": "CR@gmail.com",
-                "password": "123456"
+                "E-mail": {
+                  "email": "CR@gmail.com",
+                  "password": "123456"
+                },
+                "User": {
+                  "user": "CaioR",
+                  "password": "123456"
+                }
               }
             }
           }
@@ -66,11 +72,13 @@
                 "$ref": "#/components/schemas/User"
               },
               "examples": {
-                "user": "CaioR",
-                "userName": "Caio Rodrigo",
-                "email": "CR@gmail.com",
-                "password": "123456",
-                "avatar": "https://avatars.githubusercontent.com/u/78828999?v=4"
+                "User": {
+                  "user": "CaioR",
+                  "userName": "Caio Rodrigo",
+                  "email": "CR@gmail.com",
+                  "password": "123456",
+                  "avatar": "https://avatars.githubusercontent.com/u/78828999?v=4"
+                }
               }
             }
           }
@@ -197,9 +205,11 @@
                 "$ref": "#/components/schemas/User"
               },
               "examples": {
-                "name": "Panna cotta",
-                "description": "talian panna cotta literally means cooked (cotta) cream (panna). It is one of the simplest desserts in the world: a pudding consisting of good quality cream with possibly some milk, a minimal amount of gelatine and some sugar. A touch of vanilla may be added to give the pudding a subtle taste.",
-                "url": "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/panna_cotta_2-1080x1080.jpg"
+                "Item": {
+                  "name": "Panna cotta",
+                  "description": "talian panna cotta literally means cooked (cotta) cream (panna). It is one of the simplest desserts in the world: a pudding consisting of good quality cream with possibly some milk, a minimal amount of gelatine and some sugar. A touch of vanilla may be added to give the pudding a subtle taste.",
+                  "url": "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/panna_cotta_2-1080x1080.jpg"
+                }
               }
             }
           }
@@ -241,9 +251,11 @@
                 "$ref": "#/components/schemas/Menu"
               },
               "examples": {
-                "name": "Carpaccio",
-                "description": "The Italian appetiser, carpaccio traditionally consists of wafer-thin slices of raw beef, served with capers and a dressing of mayonnaise, lemon juice, Worcestershire sauce and milk. Outside Italy, thin-sliced beef is served with arugula and Parmesan cheese.",
-                "url": "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/carpaccio_2-1080x960.jpg"
+                "Item": {
+                  "name": "Carpaccio",
+                  "description": "The Italian appetiser, carpaccio traditionally consists of wafer-thin slices of raw beef, served with capers and a dressing of mayonnaise, lemon juice, Worcestershire sauce and milk. Outside Italy, thin-sliced beef is served with arugula and Parmesan cheese.",
+                  "url": "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/carpaccio_2-1080x960.jpg"
+                }
               }
             }
           }
