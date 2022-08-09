@@ -14,7 +14,7 @@ const validId = (req, res, next) => {
 const validObjectBody = (req, res, next) => {
 	const item = req.body;
 
-	if (!item.name && !item.description && !item.url) {
+	if (!item.name && !item.description && !item.image) {
 		return res.status(400).send({ message: 'Fill in all fields!' });
 	}
 
@@ -26,8 +26,8 @@ const validObjectBody = (req, res, next) => {
 		return res.status(400).send({ message: 'Fill in the description field!' });
 	}
 
-	if (!item.url) {
-		return res.status(400).send({ message: 'Fill in the URL field!' });
+	if (!item.image) {
+		return res.status(400).send({ message: 'Fill in the image field!' });
 	}
 
 	next();
