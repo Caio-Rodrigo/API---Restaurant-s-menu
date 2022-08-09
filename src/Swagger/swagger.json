@@ -10,14 +10,18 @@
         "email": "caio4866@gmail.com"
       }
     },
-    "version": "1.0.0",
-    "service": [
-      {
-        "url": "https://api-restaurant-menu.herokuapp.com/api/",
-        "description": "API for restaurant"
-      }
-    ]
+    "version": "1.0.0"
   },
+  "service": [
+    {
+      "url": "https://api-restaurant-menu.herokuapp.com/api/",
+      "description": "URL do Deploy"
+    },
+    {
+      "url": "mongodb://localhost:27017/restaurant",
+      "description": "URL for test"
+    }
+  ],
   "paths": {
     "/Auth/": {
       "post": {
