@@ -4,15 +4,9 @@
     "title": "restaurant menu",
     "description": "API for registering products and orders",
     "termsOfService": "",
-    "contact": {
-      "dev1": {
-        "name": "Caio Rodrigo",
-        "email": "caio4866@gmail.com"
-      }
-    },
     "version": "1.0.0"
   },
-  "service": [
+  "servers": [
     {
       "url": "https://api-restaurant-menu.herokuapp.com/api/",
       "description": "URL do Deploy"
