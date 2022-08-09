@@ -13,7 +13,7 @@
     }
   ],
   "paths": {
-    "/Auth/": {
+    "/Auth": {
       "post": {
         "summary": "Account access",
         "description": "Route responsible for the access of a registered user",
