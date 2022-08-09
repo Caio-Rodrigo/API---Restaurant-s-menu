@@ -12,7 +12,7 @@
       "description": "URL do Deploy"
     },
     {
-      "url": "mongodb://localhost:27017/restaurant",
+      "url": "https://mongodb://localhost:27017/restaurant",
       "description": "URL for test"
     }
   ],
