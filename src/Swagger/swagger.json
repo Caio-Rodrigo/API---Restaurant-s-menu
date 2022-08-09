@@ -4,16 +4,22 @@
     "title": "restaurant menu",
     "description": "API for registering products and orders",
     "termsOfService": "",
+    "contact": {
+      "dev1": {
+        "name": "Caio Rodrigo",
+        "email": "caio4866@gmail.com"
+      },
+      "dev2": {
+        "name": "",
+        "email": ""
+      }
+    },
     "version": "1.0.0"
   },
-  "servers": [
+  "service": [
     {
-      "url": "https://api-restaurant-menu.herokuapp.com/api/",
-      "description": "URL do Deploy"
-    },
-    {
-      "url": "https://mongodb://localhost:27017/restaurant",
-      "description": "URL for test"
+      "url": "mongodb://localhost:27017/restaurant",
+      "description": "API for restaurant"
     }
   ],
   "paths": {
@@ -31,19 +37,9 @@
                 "type": "object",
                 "$ref": "#/components/schemas/User"
               },
-              "examples": {
-                "E-mail": {
-                  "value": {
-                    "email": "CR@gmail.com",
-                    "password": "123456"
-                  }
-                },
-                "User": {
-                  "value": {
-                    "user": "CaioR",
-                    "password": "123456"
-                  }
-                }
+              "example": {
+                "email": "CR@gmail.com",
+                "password": "123456"
               }
             }
           }
@@ -75,16 +71,12 @@
                 "type": "Object",
                 "$ref": "#/components/schemas/User"
               },
-              "examples": {
-                "User": {
-                  "value": {
-                    "user": "CaioR",
-                    "userName": "Caio Rodrigo",
-                    "email": "CR@gmail.com",
-                    "password": "123456",
-                    "avatar": "https://avatars.githubusercontent.com/u/78828999?v=4"
-                  }
-                }
+              "example": {
+                "user": "CaioR",
+                "userName": "Caio Rodrigo",
+                "email": "CR@gmail.com",
+                "password": "123456",
+                "avatar": "https://avatars.githubusercontent.com/u/78828999?v=4"
               }
             }
           }
@@ -210,14 +202,10 @@
                 "type": "object",
                 "$ref": "#/components/schemas/User"
               },
-              "examples": {
-                "Item": {
-                  "value": {
-                    "name": "Panna cotta",
-                    "description": "talian panna cotta literally means cooked (cotta) cream (panna). It is one of the simplest desserts in the world: a pudding consisting of good quality cream with possibly some milk, a minimal amount of gelatine and some sugar. A touch of vanilla may be added to give the pudding a subtle taste.",
-                    "url": "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/panna_cotta_2-1080x1080.jpg"
-                  }
-                }
+              "example": {
+                "name": "Panna cotta",
+                "description": "talian panna cotta literally means cooked (cotta) cream (panna). It is one of the simplest desserts in the world: a pudding consisting of good quality cream with possibly some milk, a minimal amount of gelatine and some sugar. A touch of vanilla may be added to give the pudding a subtle taste.",
+                "url": "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/panna_cotta_2-1080x1080.jpg"
               }
             }
           }
@@ -258,14 +246,10 @@
               "schema": {
                 "$ref": "#/components/schemas/Menu"
               },
-              "examples": {
-                "Item": {
-                  "value": {
-                    "name": "Carpaccio",
-                    "description": "The Italian appetiser, carpaccio traditionally consists of wafer-thin slices of raw beef, served with capers and a dressing of mayonnaise, lemon juice, Worcestershire sauce and milk. Outside Italy, thin-sliced beef is served with arugula and Parmesan cheese.",
-                    "url": "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/carpaccio_2-1080x960.jpg"
-                  }
-                }
+              "example": {
+                "name": "Carpaccio",
+                "description": "The Italian appetiser, carpaccio traditionally consists of wafer-thin slices of raw beef, served with capers and a dressing of mayonnaise, lemon juice, Worcestershire sauce and milk. Outside Italy, thin-sliced beef is served with arugula and Parmesan cheese.",
+                "url": "https://www.takeaway.com/foodwiki/uploads/sites/11/2019/08/carpaccio_2-1080x960.jpg"
               }
             }
           }
