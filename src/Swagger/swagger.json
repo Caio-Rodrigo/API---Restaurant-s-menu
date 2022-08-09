@@ -4,7 +4,7 @@
     "title": "restaurant menu",
     "description": "API for registering products and orders",
     "termsOfService": "",
-    "services": [
+    "servers": [
       {
         "url": "https://api-restaurant-menu.herokuapp.com/",
         "description": "URL for Deploy"
