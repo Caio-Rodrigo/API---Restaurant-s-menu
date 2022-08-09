@@ -8,17 +8,13 @@
       "dev1": {
         "name": "Caio Rodrigo",
         "email": "caio4866@gmail.com"
-      },
-      "dev2": {
-        "name": "",
-        "email": ""
       }
     },
     "version": "1.0.0"
   },
   "service": [
     {
-      "url": "mongodb://localhost:27017/restaurant",
+      "url": "https://api-restaurant-menu.herokuapp.com/api/",
       "description": "API for restaurant"
     }
   ],
