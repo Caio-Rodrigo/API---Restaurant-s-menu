@@ -8,7 +8,7 @@
   },
   "servers": [
     {
-      "url": "https://api-restaurant-menu.herokuapp.com/",
+      "url": "https://api-blueedcheff.onrender.com",
       "description": "URL for Deploy"
     },
     {
