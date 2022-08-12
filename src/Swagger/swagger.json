@@ -202,11 +202,7 @@
         "tags": [
           "Menu"
         ],
-        "security": [
-          {
-            "bearerLogin": []
-          }
-        ],
+       
         "requestBody": {
           "content": {
             "application/json": {
