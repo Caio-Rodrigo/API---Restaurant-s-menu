@@ -6,7 +6,7 @@ const route = require('express').Router();
 route.get('/allItens', controller.findAllMenuController);
 route.get('/itens/:id', validId, controller.findByIdCardapioController);
 route.post('/createItem', validObjectBody, controller.createItem);
-route.put('/updateItem/:id', Token, validId, controller.updateItem);
-route.delete('/deleteItem/:id', Token, validId, controller.deleteItem);
+route.put('/updateItem/:id', validId, controller.updateItem);
+route.delete('/deleteItem/:id',  validId, controller.deleteItem);
 
 module.exports = route;
